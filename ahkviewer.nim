@@ -17,9 +17,9 @@ proc keytableToString*(keytable: Table[string, string], space = "  ", indent = "
     var keystring = newSeq[string]()
     for c in keyline:
       if keytable.hasKey($c):
-        keystring.add(keytable[$c])
+        keystring.add(toUpperAscii(keytable[$c]))
       else:
-        keystring.add($c)
+        keystring.add(toUpperAscii($c))
     keystrings.add(keystring)
   result = ""
   var currindent = 0
